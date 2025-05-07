@@ -11,6 +11,43 @@ function Img({ lien }) {
   return (<img src={lien} alt="Image" />);
 }
 
+function Checkbox({ label ,label2}) {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+
+  const handleChange = (event) => {
+    setIsChecked(event.target.checked);
+    setIsChecked2(!event.target.checked);
+  };
+  const handleChange2 = (event) => {
+    setIsChecked(!event.target.checked);
+    setIsChecked2(event.target.checked);
+  };
+    return (
+      <>
+      <label>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleChange}
+          value={label}
+        />
+        {label}
+      </label>
+      <br/>
+      <label>
+      <input
+        type="checkbox"
+        checked={isChecked2}
+        onChange={handleChange2}
+        value={label2}
+      />
+      {label2}
+    </label>
+    </>
+    );
+}
+
 function App() {
   const [data, setData] = useState({ name: "", sprites: { front_default: null } });
   const [login,setLogin] = useState("")
@@ -38,6 +75,8 @@ function App() {
       <input type='password' id='' value={password} onChange={
         (f)=>setPassword(f.target.value)
       } name='' />
+      <br />
+      <Checkbox label ='Professeur' label2 ='Etudiant'/>
       <br />
       <Img lien={data.sprites.front_default} />
       <br />

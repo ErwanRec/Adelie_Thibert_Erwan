@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function Bouton({ cliquer }) {
@@ -66,21 +64,21 @@ function App() {
 
   return (
       <div>
-      <p>Veuillez renseigner vos identifiants :</p>
-      <p>Login :</p>
-      <input type='text' id='' value={login} onChange={
-        (e)=>setLogin(e.target.value)
-      } name='' />
-      <p>Passeword :</p>
-      <input type='password' id='' value={password} onChange={
-        (f)=>setPassword(f.target.value)
-      } name='' />
-      <br />
-      <Checkbox label ='Professeur' label2 ='Etudiant'/>
-      <br />
-      <Img lien={data.sprites.front_default} />
-      <br />
-      <Bouton cliquer={cliquer} />
+        <p>Veuillez renseigner vos identifiants :</p>
+        <p>Login :</p>
+        <input type='text' id='' value={login} onChange={
+          (e)=>setLogin(e.target.value)
+        } name='' />
+        <p>Passeword :</p>
+        <input type='password' id='' value={password} onChange={
+          (f)=>setPassword(f.target.value)
+        } name='' />
+        <br />
+        <Checkbox label ='Professeur' label2 ='Etudiant'/>
+        <br />
+        <Img lien={data.sprites.front_default} />
+        <br />
+        <Bouton cliquer={cliquer} />
     </div>
   )
 }

@@ -12,14 +12,7 @@ function Img({ Idprof }) {
 }
 
 function Prof() {
-    return (
-        <div>
-        <p>Bienvenu :</p>
-        <br />
-        <Img Idprof={}} />
-        <br />
-      </div>
-    )
+    
   }
   
   export default Prof

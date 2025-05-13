@@ -3,8 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './Prof.css'
 
-function Img({ lien }) {
-  return (<img src={lien} alt="Image" />);
+function Img({ Idprof }) {
+  const randomNumber = Math.floor(Math.random() * 151) + 1;
+  fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`)
+    .then(r => r.json())
+    .then(datas => { setData(datas) });
+  return (<img src={Idprof} alt="Image" />);
 }
 
 function Prof() {
@@ -12,7 +16,7 @@ function Prof() {
         <div>
         <p>Bienvenu :</p>
         <br />
-        <Img lien={data.sprites.front_default} />
+        <Img Idprof={}} />
         <br />
       </div>
     )

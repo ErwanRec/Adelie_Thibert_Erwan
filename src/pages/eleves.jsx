@@ -90,7 +90,7 @@ function Eleve() {
     const eleve = userData[0]; 
     const navigate = useNavigate();
     const cliquer = () => {
-        navigate('/eleves2', { state: { user: userData[0], ideleve: eleve.ID_Eleves } });
+        navigate('/eleves2', { state: { user: eleve, ideleve: eleve.ID_Eleves } });
     }
     return (
         <>

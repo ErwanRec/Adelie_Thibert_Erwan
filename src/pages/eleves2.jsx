@@ -88,7 +88,7 @@ function Eleve2() {
     const eleve = user;
     const navigate = useNavigate();
     const cliquer = () => {
-        navigate('/eleves', { state: { userData: user } });
+        navigate('/eleves', { state: { userData: [user] } });
     }
     return (
         <>

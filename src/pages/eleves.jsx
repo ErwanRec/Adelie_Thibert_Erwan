@@ -100,7 +100,7 @@ function Eleve() {
             image = {eleve.Photo}
             nom = {eleve.Nom}
             prenom = {eleve.Prenom}
-            classe = {eleve.ID_Classe}/>
+            classe = {eleve.Classe}/>
         <br />
         <TableNotes notes = {notes} />
         <br />

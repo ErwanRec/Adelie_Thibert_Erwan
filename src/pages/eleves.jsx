@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom';
 function Identite(props) {  
     return (
         <div>
-            <img src={props.image} alt="Photo d'identité" />
+          <div>
+            <img src={props.image} alt="Photo d'identité"  />
+          </div>
             <p>{props.nom} {props.prenom}</p>
             <p>Classe {props.classe}</p>
         </div>);
@@ -56,7 +58,7 @@ function Eleve() {
     if (!userData) return;
     const eleve = userData[0];
     const id = eleve.ID_Eleves;
-    fetch(`http://localhost/projetweb/transformationJson.php?cinqnote=${id}`)
+    fetch(`https://eprudhommea.zzz.bordeaux-inp.fr/transformationJson.php?cinqnote=${id}`)
   .then(async (response) => {
     const text = await response.text();
     console.log("Réponse brute :", text); 

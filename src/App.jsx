@@ -55,7 +55,7 @@ function App() {
   const cliquer = () => {
     console.log("role choisi", role);
 
-    fetch(`http://localhost/projetweb/transformationJson.php?role=${role}&login=${login}&password=${password}`)
+    fetch(`https://eprudhommea.zzz.bordeaux-inp.fr/transformationJson.php?role=${role}&login=${login}&password=${password}`)
      .then(async (response) => {
         if (!response.ok) {
           const text = await response.text();
@@ -85,7 +85,9 @@ function App() {
 
   return (
       <div>
-        <img src="Logo_SuperNote.png" alt="Logo SuperNote" width="20%"/>
+        <div class="logo"><img src="Logo_SuperNote.png" alt="Logo SuperNote" width="20%"/>
+        SuperNote
+        </div>
         <p>Veuillez renseigner vos identifiants :</p>
         <p>Login 
         <input type='text' id='' value={login} onChange={

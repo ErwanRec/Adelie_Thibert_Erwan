@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './prof.css';
+import './eleves.css';
 import { useLocation } from 'react-router-dom';
 
 
@@ -46,8 +46,8 @@ const handleSingleCheckboxChange = (index) => {
 useEffect(() => {
     if (!userData) return;
     const prof = userData[0];
-    const id = prof.ID_Profeseur;
-    fetch(`http://localhost/projetweb/transformationJson.php?matiere=${id}`)
+    const id = prof.ID_Matiere;
+    fetch(`https://eprudhommea.zzz.bordeaux-inp.fr/transformationJson.php?matiere=${id}`)
   .then(async (response) => {
     const text = await response.text();
     console.log("Réponse brute :", text); 
@@ -83,7 +83,7 @@ const cliquer = () => {
   }
 
   const classeChoisie = Ds[selectedIndex]?.Classe;
-  fetch(`http://localhost/projetweb/transformationJson.php?classe=${classeChoisie}&DS=${Ds[selectedIndex]?.Nom_DS}&mat=${prof.ID_Matiere}`)
+  fetch(`https://eprudhommea.zzz.bordeaux-inp.fr/transformationJson.php?classe=${classeChoisie}&DS=${Ds[selectedIndex]?.Nom_DS}&mat=${prof.ID_Matiere}`)
      .then(async (response) => {
         if (!response.ok) {
           const text = await response.text();
@@ -93,7 +93,7 @@ const cliquer = () => {
       })
       .then(datas => {
         if (datas.length === 0) {
-          alert("pas d'élèves' ayant fait se Ds");
+          alert("pas d'élèves' ayant fait se DS");
       } else {
         setClasse(datas);
         setAfficherTableau(true);
@@ -112,10 +112,9 @@ const cliquer = () => {
   const prof = userData[0];
   return (
     <div>
-      <p>Bienvenue <Texte data={prof} /> :</p>
-      <p>Professeur de {prof.ID_Matiere}</p>
-      <br />
       <Img data={prof} />
+      <p><Texte data={prof} /></p>
+      <p>Professeur de {prof.ID_Matiere}</p>
       <br />
       <table>
         <thead>

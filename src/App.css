@@ -14,7 +14,17 @@
   color: #888;
 }
 
+h1 {
+  display: inline-block;
+}
 div {
   background-color: #fff5c7;
   border-radius: 8px;
 }
+
+.logo {
+  color:#e61b23;
+  place-items: center;
+  font-size: 6em;
+  font-family: Segoe UI black;
+  vertical-align: middle;}

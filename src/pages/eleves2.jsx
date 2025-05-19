@@ -54,7 +54,7 @@ function Eleve2() {
 
     useEffect(() => {
     if (!user) return;
-    fetch(`http://localhost/projetweb/transformationJson.php?globalenote=${ideleve}`)
+    fetch(`https://eprudhommea.zzz.bordeaux-inp.fr/transformationJson.php?globalenote=${ideleve}`)
   .then(async (response) => {
     const text = await response.text();
     console.log("Réponse brute :", text); 
